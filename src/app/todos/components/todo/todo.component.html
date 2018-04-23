@@ -1,0 +1,8 @@
+<p>
+  todo works!
+</p>
+<!-- <router-outlet></router-outlet> -->
+
+<ul *ngFor='let item of items'>
+  <todo-item [item]='item' (onClick)='itemClicked($event)'></todo-item>
+</ul>
