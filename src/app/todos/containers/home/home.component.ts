@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
 
@@ -18,7 +18,7 @@ export class HomeComponent {
   @ViewChild('task') private _taskInput: ElementRef;
 
   constructor(private _store: Store<fromTodos.TodosState>) {
-    this.todos$ = this._store.select(fromTodos.getTodoItems);
+    this.todos$ = this._store.pipe(select(fromTodos.getTodoItems))
   }
 
   public addTask(): void {

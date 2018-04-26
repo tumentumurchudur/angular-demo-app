@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-import { ITodo } from '../interfaces'
 
 export enum ActionTypes {
 	AddTodo = '[Todo] Add todo',
@@ -7,21 +6,15 @@ export enum ActionTypes {
 }
 
 export class AddTodo implements Action {
-	public type = ActionTypes.AddTodo;
-	public payload: ITodo;
+	public readonly type = ActionTypes.AddTodo;
 
-	constructor(private _payload) {
-		this.payload = _payload;
-	}
+	constructor(public payload) { }
 }
 
 export class CompleteTodo implements Action {
-	public type = ActionTypes.CompleteTodo;
-	public payload: ITodo;
+	public readonly type = ActionTypes.CompleteTodo;
 
-	constructor(private _payload) {
-		this.payload = _payload;
-	}
+	constructor(public payload) { }
 }
 
 export type Actions = AddTodo | CompleteTodo;

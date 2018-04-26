@@ -1,6 +1,8 @@
 import { ActionTypes, Actions } from '../actions';
 import { ITodo } from '../interfaces';
 
+// TODO: Use NgRx/Entity to reducer boilerplate for reducer functions.
+
 export interface State {
 	todos: ITodo[]
 }
@@ -8,8 +10,8 @@ export interface State {
 const defaultState = {
 	todos: [
 		{ task: 'Do homework', status: false },
-    { task: 'Clean the house', status: true },
-    { task: 'Mow the lawn', status: false }
+    	{ task: 'Clean the house', status: true },
+    	{ task: 'Mow the lawn', status: false }
 	]
 };
 

@@ -12,12 +12,10 @@ export class TodoEffects {
 
 	@Effect()
 	public todoAdded$: Observable<Action> = this._actions$
-		.ofType(ActionTypes.AddTodo)
 		.pipe(
+			ofType(ActionTypes.AddTodo),
 			map((action: any) => action.payload),
-			map(todo => {
-				return new CompleteTodo(todo);
-			})
+			map(todo => new CompleteTodo(todo))
 		);
 
 	constructor(private readonly _actions$: Actions) {}

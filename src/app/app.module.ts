@@ -9,11 +9,7 @@ import { SharedModule } from './shared';
 
 export const appRoutes: Routes = [
   {
-    path: '',
-    redirectTo: '/todos',
-    pathMatch: 'full'
-  },
-  {
+    // Lazy load this module when navigated to /todos
     path: 'todos',
     loadChildren: './todos/todos.module#TodosModule'
   }
